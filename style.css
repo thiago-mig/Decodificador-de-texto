@@ -1,0 +1,19 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: rgba(243, 245, 252, 1);
+}
+
+main {
+  width: 1440px;
+  height: 1024;
+}
+
+.logo-container {
+  position: absolute;
+  width: 120px;
+  height: 48px;
+  left: 40px;
+  top: 40px;
+}
