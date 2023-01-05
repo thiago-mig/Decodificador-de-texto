@@ -9,8 +9,8 @@
 }
 
 main {
-  width: 1440px;
-  height: 1024;
+  max-width: 1440px;
+  max-height: 1024;
 }
 
 .logo-container {
@@ -25,10 +25,62 @@ textarea {
   position: absolute;
   width: 680px;
   height: 250px;
-  left: 220px;
+  left: 235px;
   top: 160px;
   font-size: 32px;
   font-weight: 400;
   color: rgba(10, 56, 113, 1);
   border: none;
+}
+
+.instructions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  width: 260px;
+  height: 18px;
+  left: 240px;
+  top: 450px;
+}
+
+.instructions > p {
+  font-size: 12px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: absolute;
+  width: 660px;
+  height: 67px;
+  left: 240px;
+  top: 470px;
+  padding: 0px;
+}
+
+.button-container > button {
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+  border-radius: 24px;
+}
+
+.encrypt {
+  background: rgb(10, 56, 113);
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.decrypt {
+  background: rgb(216, 223, 232);
+  border: 1px solid rgb(10, 56, 113);
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: rgb(10, 56, 113);
 }
