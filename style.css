@@ -42,7 +42,7 @@ textarea {
   width: 260px;
   height: 18px;
   left: 240px;
-  top: 480px;
+  top: 515px;
 }
 
 .instructions > p {
@@ -57,7 +57,7 @@ textarea {
   width: 660px;
   height: 67px;
   left: 240px;
-  top: 500px;
+  top: 540px;
   padding: 0px;
 }
 
@@ -134,6 +134,41 @@ textarea {
   text-align: center;
   align-self: stretch;
   color: rgb(73, 80, 87);
+}
+
+.output {
+  position: absolute;
+  display: none;
+  width: 300px;
+  height: 450px;
+  top: 42px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  background-color: white;
+  color: rgb(73, 80, 87);
+
+}
+
+.copy {
+  display: none;
+  position: absolute;
+  width: 330px;
+  height: 67px;
+  top: 500px;
+  left: 10px;
+  border: 1px solid rgb(10, 56, 113);
+  border-radius: 24px;
+  background-color: rgb(255, 255, 255);
+  color: rgba(10, 56, 113, 1);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 }
 
 footer {
