@@ -142,20 +142,25 @@ textarea {
   color: rgb(73, 80, 87);
 }
 
-.output {
+.output-wrapper {
   position: absolute;
   display: none;
-  width: 300px;
-  height: 450px;
+  flex-direction: column;
+  max-width: 295px;
+  height: 430px;
   top: 42px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 150%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: rgb(73, 80, 87);
+  overflow: hidden;
+}
 
+.output-wrapper > p {
+  background-color: white;
 }
 
 .copy {
