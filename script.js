@@ -6,6 +6,7 @@ const decryptBtn = document.querySelector('.decrypt');
 const notFoundLogo = document.querySelector('.output-img-container');
 const notFoundInstructions = document.querySelector('.output-instructions');
 const copyBtn = document.querySelector('.copy');
+const outputHidden = document.querySelector('.output-hidden');
 
 
 const encrypt = () => {
@@ -44,6 +45,7 @@ const encrypt = () => {
     outputWrapper.style.display = 'flex'
     output.style.display = 'block';
     output.innerHTML = result;
+    outputHidden.value = result;
   } else {
     notFoundLogo.style.display = 'block';
     notFoundInstructions.style.display = 'block';
@@ -51,6 +53,7 @@ const encrypt = () => {
     outputWrapper.style.display = 'none';
     output.style.display = 'none';
     output.innerHTML = '';
+    outputHidden.value = '';
   }
 }
 
@@ -69,6 +72,7 @@ const decrypt = () => {
     outputWrapper.style.display = 'block'
     output.style.display = 'block';
     output.innerHTML = result;
+    outputHidden.value = result;
   } else {
     notFoundLogo.style.display = 'block';
     notFoundInstructions.style.display = 'block';
@@ -76,10 +80,17 @@ const decrypt = () => {
     outputWrapper.style.display = 'flex'
     output.style.display = 'none';
     output.innerHTML = '';
+    outputHidden.value = '';
   }
+}
+
+const copy = () => {
+  outputHidden.select();
+  navigator.clipboard.writeText(outputHidden.value);
 }
 
 window.onload = () => {
   encryptBtn.addEventListener('click', encrypt);
   decryptBtn.addEventListener('click', decrypt);
+  copyBtn.addEventListener('click', copy);
 }
