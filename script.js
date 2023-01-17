@@ -7,6 +7,7 @@ const notFoundLogo = document.querySelector('.output-img-container');
 const notFoundInstructions = document.querySelector('.output-instructions');
 const copyBtn = document.querySelector('.copy');
 const outputHidden = document.querySelector('.output-hidden');
+const tooltip = document.querySelector('.tooltip');
 
 
 const encrypt = () => {
@@ -77,7 +78,7 @@ const decrypt = () => {
     notFoundLogo.style.display = 'block';
     notFoundInstructions.style.display = 'block';
     copyBtn.style.display = 'none';
-    outputWrapper.style.display = 'flex'
+    outputWrapper.style.display = 'block'
     output.style.display = 'none';
     output.innerHTML = '';
     outputHidden.value = '';
@@ -87,6 +88,8 @@ const decrypt = () => {
 const copy = () => {
   outputHidden.select();
   navigator.clipboard.writeText(outputHidden.value);
+  setTimeout(() => tooltip.style.display = 'none', 3000);
+  tooltip.style.display = 'block';
 }
 
 window.onload = () => {

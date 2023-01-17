@@ -182,6 +182,44 @@ textarea {
   text-align: center;
 }
 
+.tooltip {
+  display: none;
+  position: absolute;
+  width: 130px;
+  height: 20px;
+  bottom: 86px;
+  left: 109px;
+  padding: 2px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(10, 56, 113);
+  opacity: 0;
+  transition: opacity 1s;
+  animation-name: showtooltip;
+  animation-duration: 3s;
+}
+
+@keyframes showtooltip {
+  0% {
+    display: block;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+.tooltip > span {
+  background-color: rgba(10, 56, 113, 0);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
