@@ -1,5 +1,6 @@
 const input = document.querySelector('.input');
-const outputWrapper = document.querySelector('.output-wrapper')
+const outputResult = document.querySelector('.output-result');
+const outputDefault = document.querySelector('.output-default');
 const output = document.querySelector('.output');
 const encryptBtn = document.querySelector('.encrypt');
 const decryptBtn = document.querySelector('.decrypt');
@@ -40,19 +41,13 @@ const encrypt = () => {
           break;
       }
     }
-    notFoundLogo.style.display = 'none';
-    notFoundInstructions.style.display = 'none';
-    copyBtn.style.display = 'block';
-    outputWrapper.style.display = 'flex'
-    output.style.display = 'block';
+    outputDefault.style.display = 'none';
+    outputResult.style.display = 'flex';
     output.innerHTML = result;
     outputHidden.value = result;
   } else {
-    notFoundLogo.style.display = 'block';
-    notFoundInstructions.style.display = 'block';
-    copyBtn.style.display = 'none';
-    outputWrapper.style.display = 'none';
-    output.style.display = 'none';
+    outputDefault.style.display = 'flex';
+    outputResult.style.display = 'none';
     output.innerHTML = '';
     outputHidden.value = '';
   }
@@ -67,19 +62,13 @@ const decrypt = () => {
     result = result.replace(/ober/g, 'o');
     result = result.replace(/ufat/g, 'u');
 
-    notFoundLogo.style.display = 'none';
-    notFoundInstructions.style.display = 'none';
-    copyBtn.style.display = 'block';
-    outputWrapper.style.display = 'block'
-    output.style.display = 'block';
+    outputDefault.style.display = 'none';
+    outputResult.style.display = 'flex';
     output.innerHTML = result;
     outputHidden.value = result;
   } else {
-    notFoundLogo.style.display = 'block';
-    notFoundInstructions.style.display = 'block';
-    copyBtn.style.display = 'none';
-    outputWrapper.style.display = 'block'
-    output.style.display = 'none';
+    outputDefault.style.display = 'flex';
+    outputResult.style.display = 'none';
     output.innerHTML = '';
     outputHidden.value = '';
   }

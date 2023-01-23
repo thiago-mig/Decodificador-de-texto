@@ -4,45 +4,55 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  background-color: rgba(243, 245, 252, 1);
   font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: rgba(243, 245, 252, 1);
+}
+
+header {
+  width: 120px;
+  height: 48px;
+  margin-top: 40px;
+  margin-left: 40px;
 }
 
 main {
   max-width: 1440px;
-  max-height: 1024px;
+  max-height: 498px;
+  padding: 20px;
+  display: flex;
+  margin-left: 40px;
+  margin-top: 60px;
 }
 
-.logo-container {
-  position: absolute;
-  width: 120px;
-  height: 48px;
-  left: 40px;
-  top: 40px;
+.input-section {
+  margin-left: 120px;
 }
 
 textarea {
-  position: absolute;
   width: 680px;
-  height: 250px;
-  left: 235px;
-  top: 160px;
+  height: 350px;
   font-size: 32px;
   font-weight: 400;
   color: rgba(10, 56, 113, 1);
   border: none;
   resize: none;
+  background-color: inherit;
+}
+
+textarea:focus {
+  outline: 0;
+
 }
 
 .instructions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  position: absolute;
-  width: 260px;
   height: 18px;
-  left: 240px;
-  top: 515px;
+  margin-top: 8px;
+  gap: 6px;
 }
 
 .instructions > p {
@@ -53,11 +63,8 @@ textarea {
   display: flex;
   align-items: center;
   gap: 24px;
-  position: absolute;
   width: 660px;
   height: 67px;
-  left: 240px;
-  top: 540px;
   padding: 0px;
 }
 
@@ -87,43 +94,44 @@ textarea {
 }
 
 .output-container {
-  padding: 32px;
   position: absolute;
-  width: 350px;
-  height: 580px;
+  z-index: 1;
   top: 40px;
-  left: 944px;
+  left: 940px;
+  padding: 10px;
+  width: 350px;
+  height: 590px;
   background: rgb(255, 255, 255);
   border-radius: 32px;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
-.output-container > .output-img-container {
-  width: 286px;
-  height: 304px;
-  margin-bottom: 32px;
+.output-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.output-container > .output-img-container > img {
-  width: 286px;
+.output-img-container {
+  width: 332px;
   height: 304px;
   margin-bottom: 32px;
+  background-image: url('./img/not-found-img.svg');
 }
 
-.output-container > .output-instructions {
+.output-instructions {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 16px;
-  position: absolute;
   width: 286px;
   height: 122px;
+  text-align: center;
 }
 
-.output-container > .output-instructions > p:first-child {
+.output-instructions > p:first-child {
   font-family: 'Inter', sans-serif;
-  text-align: center;
   font-weight: 700;
   font-size: 24px;
   line-height: 120%;
@@ -131,7 +139,7 @@ textarea {
   align-self: stretch;
 }
 
-.output-container > .output-instructions > p:last-child {
+.output-instructions > p:last-child {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -142,13 +150,11 @@ textarea {
   color: rgb(73, 80, 87);
 }
 
-.output-wrapper {
-  position: absolute;
+.output-result {
   display: none;
   flex-direction: column;
-  max-width: 295px;
-  height: 430px;
-  top: 42px;
+  width: 100%;
+  height: 100%;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -157,19 +163,23 @@ textarea {
   background-color: rgb(255, 255, 255);
   color: rgb(73, 80, 87);
   overflow: hidden;
+  padding: 6px;
+  
+  align-content: space-between;
 }
 
-.output-wrapper > p {
-  background-color: white;
+.output-text-container {
+  margin-bottom: 15px;
+  height: 560px;
+}
+
+.copy-button-container {
+  width: 100%;
 }
 
 .copy {
-  display: none;
-  position: absolute;
-  width: 330px;
+  width: 100%;
   height: 67px;
-  top: 500px;
-  left: 10px;
   border: 1px solid rgb(10, 56, 113);
   border-radius: 24px;
   background-color: rgb(255, 255, 255);
@@ -182,17 +192,24 @@ textarea {
   text-align: center;
 }
 
+.tooltip-container {
+  height: 30px;
+  margin-top: 38px;
+  margin-bottom: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .tooltip {
   display: none;
-  position: absolute;
   width: 130px;
   height: 20px;
-  bottom: 86px;
-  left: 109px;
-  padding: 2px;
   border-radius: 6px;
   text-align: center;
   font-size: 10px;
+  line-height: 22px;
   color: rgb(255, 255, 255);
   background-color: rgb(10, 56, 113);
   opacity: 0;
@@ -200,38 +217,37 @@ textarea {
   animation-name: showtooltip;
   animation-duration: 3s;
 }
-
+  
 @keyframes showtooltip {
   0% {
     display: block;
   }
-
+  
   25% {
     opacity: 1;
   }
-
+  
   100% {
     opacity: 0;
     display: none;
   }
 }
-
+  
 .tooltip > span {
   background-color: rgba(10, 56, 113, 0);
 }
 
 footer {
+  position: absolute;
+  bottom: 0px;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  position: absolute;
-  bottom: 0px;
-  width: 1366px;
+  width: 100%;
   background: rgb(10, 56, 113);
   color: rgb(255, 255, 255);
-  border: 1px solid black;
 }
-
+  
 footer > p {
   background: rgb(10, 56, 113);
   padding: 4px;

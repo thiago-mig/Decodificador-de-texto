@@ -10,36 +10,46 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="logo-container">
+    <img src="./img/Logo.svg" alt="logo da alura">
+  </header>
   <main>
-    <div class="logo-container">
-      <img src="./img/Logo.svg" alt="logo da alura">
-    </div>
-    <textarea class="input" placeholder="Digite ou cole o texto aqui"></textarea>
-    <div class="instructions">
-      <img src="./img/Alert.svg" alt="alert logo">
-      <p>Apenas letras minúsculas e sem acentos</p>
-    </div>
-    <div class="button-container">
-      <button class="encrypt">Criptografar</button>
-      <button class="decrypt">Descriptografar</button>
-    </div>
-    <div class="output-container">
-      <div class="output-img-container">
-        <img src="./img/not-found-img.svg" alt="not found logo">
+    <section class="input-section">
+      <textarea class="input" placeholder="Digite ou cole o texto aqui"></textarea>
+      <div class="instructions">
+        <img src="./img/Alert.svg" alt="alert logo">
+        <p>Apenas letras minúsculas e sem acentos</p>
       </div>
-      <div class="output-instructions">
-        <p><strong>Nenhuma mensagem encontrada</strong></p>
-        <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+      <div class="button-container">
+        <button class="encrypt">Criptografar</button>
+        <button class="decrypt">Descriptografar</button>
       </div>
-      <div class="output-wrapper">
-        <p class="output"></p>
-        <input class="output-hidden" type="hidden" />
+    </section>
+    <section class="output-container">
+      <div class="output-default">
+        <div class="output-img-container">
+          <!-- <img src="./img/not-found-img.svg" alt="not found logo"> -->
+        </div>
+        <div class="output-instructions">
+          <p><strong>Nenhuma mensagem encontrada</strong></p>
+          <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+        </div>
       </div>
-      <div class="tooltip">
-        <span>Texto Copiado!</span>
+      <div class="output-result">
+        <div class="output-text-container">
+          <p class="output"></p>
+          <input class="output-hidden" type="hidden" />
+        </div>
+        <div class="tooltip-container">
+          <div class="tooltip">
+            <span>Texto Copiado!</span>
+          </div>
+        </div>
+        <div class="copy-button-container">
+          <button class="copy">Copiar</button>
+        </div>
       </div>
-      <button class="copy">Copiar</button>
-    </div>
+    </section>
   </main>
   <footer>
     <p>Thiago Miguel da Costa</p>
