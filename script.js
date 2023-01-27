@@ -4,16 +4,27 @@ const outputDefault = document.querySelector('.output-default');
 const output = document.querySelector('.output');
 const encryptBtn = document.querySelector('.encrypt');
 const decryptBtn = document.querySelector('.decrypt');
-const notFoundLogo = document.querySelector('.output-img-container');
-const notFoundInstructions = document.querySelector('.output-instructions');
 const copyBtn = document.querySelector('.copy');
 const outputHidden = document.querySelector('.output-hidden');
 const tooltip = document.querySelector('.tooltip');
 
+const showOutput = (result) => {
+  outputDefault.style.display = 'none';
+  outputResult.style.display = 'flex';
+  output.innerHTML = result;
+  outputHidden.value = result;
+}
+
+const resetOutput = () => {
+  outputDefault.style.display = 'flex';
+  outputResult.style.display = 'none';
+  output.innerHTML = '';
+  outputHidden.value = '';
+}
 
 const encrypt = () => {
   let result = '';
-  if (input.value !== '') {
+  if (input.value.length !== 0) {
     for (let n of input.value) {
       switch (n) {
         case 'a':
@@ -41,20 +52,14 @@ const encrypt = () => {
           break;
       }
     }
-    outputDefault.style.display = 'none';
-    outputResult.style.display = 'flex';
-    output.innerHTML = result;
-    outputHidden.value = result;
+    showOutput(result);
   } else {
-    outputDefault.style.display = 'flex';
-    outputResult.style.display = 'none';
-    output.innerHTML = '';
-    outputHidden.value = '';
+    resetOutput();
   }
 }
 
 const decrypt = () => {
-  if (input.value !== '') {
+  if (input.value.length !== 0) {
     let result = input.value;
     result = result.replace(/ai/g, 'a');
     result = result.replace(/enter/g, 'e');
@@ -62,15 +67,9 @@ const decrypt = () => {
     result = result.replace(/ober/g, 'o');
     result = result.replace(/ufat/g, 'u');
 
-    outputDefault.style.display = 'none';
-    outputResult.style.display = 'flex';
-    output.innerHTML = result;
-    outputHidden.value = result;
+    showOutput(result);
   } else {
-    outputDefault.style.display = 'flex';
-    outputResult.style.display = 'none';
-    output.innerHTML = '';
-    outputHidden.value = '';
+    resetOutput();
   }
 }
 
