@@ -28,6 +28,7 @@ main {
   align-items: flex-start;
   margin-top: 40px;
   margin-left: 60px;
+  margin-right: 60px;
   margin-bottom: 40px;
 }
 
@@ -272,7 +273,7 @@ footer > p {
   line-height: 90%;
 }
 
-@media screen and (max-width: 768px) and (min-width: 376px) {
+@media screen and (max-width: 768px) and (min-width: 426px) {
   body {
     max-width: 768px;
   }
@@ -348,7 +349,7 @@ footer > p {
 
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 425px) {
   body {
     max-width: 375px;
     max-height: 1715px;
